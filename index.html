@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rever Cafe - Premium Heritage Coffee & Bistro in Kolkata</title>
+    <meta name="description" content="Experience modern heritage at Rever Cafe Kolkata. Premium specialty coffee, artisan bakery, and curated bites in a contemporary glasshouse setting.">
+    <meta name="keywords" content="Cafe Kolkata, Specialty Coffee, Artisan Bakery, Heritage Cafe, Kolkata Bistro">
+    <meta name="author" content="Rever Cafe Kolkata">
+    <meta property="og:title" content="Rever Cafe - Premium Heritage Coffee & Bistro in Kolkata">
+    <meta property="og:description" content="Modern heritage meets specialty coffee at Rever Cafe. Book your table now.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Rever+Cafe+Kolkata">
+    <meta property="og:url" content="https://revercafe.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest': '#1b3022',
+                        'cream': '#f4f1de',
+                        'gold': '#d4af37',
+                        'forest-light': '#2d4a35',
+                        'gold-light': '#e6c547',
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'serif'],
+                        'sans': ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1b3022 0%, #2d4a35 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23d4af37" opacity="0.1"/><circle cx="80" cy="80" r="2" fill="%23d4af37" opacity="0.1"/><circle cx="20" cy="80" r="1.5" fill="%23d4af37" opacity="0.05"/><circle cx="80" cy="20" r="1.5" fill="%23d4af37" opacity="0.05"/></svg>');
+            opacity: 0.5;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4af37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .btn-primary {
+            background: #d4af37;
+            color: #1b3022;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid #d4af37;
+        }
+        .btn-primary:hover {
+            background: transparent;
+            color: #d4af37;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #d4af37;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid #d4af37;
+        }
+        .btn-secondary:hover {
+            background: #d4af37;
+            color: #1b3022;
+            transform: translateY(-2px);
+        }
+        .menu-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(27, 48, 34, 0.15);
+            border-color: #d4af37;
+        }
+        .menu-item {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 3px solid #d4af37;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            background: #f4f1de;
+            padding-left: 20px;
+        }
+        .gallery-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1;
+        }
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(27, 48, 34, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-img:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .rating-stars {
+            color: #d4af37;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .review-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        .review-card:hover {
+            box-shadow: 0 10px 30px rgba(27, 48, 34, 0.1);
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+        }
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .floating-btn i {
+            color: white;
+            font-size: 28px;
+        }
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #1b3022;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: #d4af37;
+            margin: 0 auto 30px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .close-btn {
+            color: #1b3022;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-btn:hover {
+            color: #d4af37;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        .contact-card {
+            background: linear-gradient(135deg, #1b3022 0%, #2d4a35 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(27, 48, 34, 0.3);
+        }
+        .contact-card a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 32px;
+            }
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 20% auto;
+                padding: 20px;
+            }
+            .hero-overlay {
+                opacity: 0.3;
+            }
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #d4af37;
+            color: #1b3022;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        .timing-badge {
+            background: #d4af37;
+            color: #1b3022;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+        .menu-category-btn {
+            background: white;
+            color: #1b3022;
+            border: 2px solid #1b3022;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            margin: 8px;
+        }
+        .menu-category-btn.active {
+            background: #1b3022;
+            color: #d4af37;
+            border-color: #1b3022;
+        }
+        .menu-category-btn:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-900">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="#" onclick="showPage('home')" class="text-2xl font-bold text-forest">
+                        🍃 REVER
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" onclick="showPage('home')" class="nav-link text-sm font-semibold text-forest">Home</a>
+                    <a href="#" onclick="showPage('menu')" class="nav-link text-sm font-semibold text-forest">Menu</a>
+                    <a href="#" onclick="showPage('about')" class="nav-link text-sm font-semibold text-forest">About</a>
+                    <a href="#" onclick="showPage('gallery')" class="nav-link text-sm font-semibold text-forest">Gallery</a>
+                    <a href="#" onclick="showPage('contact')" class="nav-link text-sm font-semibold text-forest">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-forest text-2xl">☰</button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
+                <a href="#" onclick="showPage('home'); toggleMobileMenu()" class="block py-2 text-forest font-semibold">Home</a>
+                <a href="#" onclick="showPage('menu'); toggleMobileMenu()" class="block py-2 text-forest font-semibold">Menu</a>
+                <a href="#" onclick="showPage('about'); toggleMobileMenu()" class="block py-2 text-forest font-semibold">About</a>
+                <a href="#" onclick="showPage('gallery'); toggleMobileMenu()" class="block py-2 text-forest font-semibold">Gallery</a>
+                <a href="#" onclick="showPage('contact'); toggleMobileMenu()" class="block py-2 text-forest font-semibold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white py-32 relative overflow-hidden min-h-screen flex items-center">
+            <div class="hero-overlay"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Modern Heritage<br>Meets Specialty Coffee
+                </h1>
+                <p class="text-xl md:text-2xl text-cream mb-8 max-w-2xl mx-auto">
+                    Experience contemporary elegance in our heritage glasshouse café. Artisan brews, freshly baked goods, and unforgettable moments.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+                    <button onclick="openBooking()" class="btn-primary text-lg">
+                        📅 Book a Table
+                    </button>
+                    <a href="#" onclick="showPage('menu')" class="btn-secondary text-lg">
+                        📖 View Menu
+                    </a>
+                </div>
+                <div class="flex justify-center gap-6 text-gold text-sm">
+                    <div>⭐ 4.8/5 Rating</div>
+                    <div>📍 Kolkata</div>
+                    <div>☕ Premium Quality</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Info Banner -->
+        <section class="bg-white border-t-4 border-gold py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-gold">⏰</div>
+                        <p class="text-sm text-gray-600 mt-2">Mon-Fri: 8 AM - 10 PM</p>
+                        <p class="text-sm text-gray-600">Sat-Sun: 9 AM - 11 PM</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-gold">📞</div>
+                        <p class="text-sm text-gray-600 mt-2">Call: +91 99033 15530</p>
+                        <p class="text-sm text-gray-600">Or DM on WhatsApp</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-gold">📍</div>
+                        <p class="text-sm text-gray-600 mt-2">AJC Bose Road Area</p>
+                        <a href="#" onclick="showPage('contact')" class="text-gold font-semibold hover:underline">View on Map</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Why Rever Cafe?</h2>
+                <div class="accent-line"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">☕</div>
+                        <h3 class="text-xl font-bold text-forest mb-3">Specialty Brews</h3>
+                        <p class="text-gray-600">Handpicked beans from around the world, roasted to perfection by our expert baristas.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">🍰</div>
+                        <h3 class="text-xl font-bold text-forest mb-3">Artisan Bakery</h3>
+                        <p class="text-gray-600">Fresh pastries and baked goods prepared daily using premium ingredients.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">✨</div>
+                        <h3 class="text-xl font-bold text-forest mb-3">Heritage Vibe</h3>
+                        <p class="text-gray-600">Modern design meets classic elegance in our stunning glasshouse setting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-forest text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6">Ready for Your Perfect Brew?</h2>
+                <p class="text-xl text-cream mb-8">Join us for an unforgettable café experience</p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <button onclick="openBooking()" class="btn-primary text-lg">Book Now</button>
+                    <a href="#" onclick="showPage('menu')" class="btn-secondary text-lg">Explore Menu</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MENU PAGE -->
+    <div id="menu" class="page">
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Our Menu</h2>
+                <p class="section-subtitle">Crafted with passion, served with love</p>
+                <div class="accent-line"></div>
+
+                <!-- Category Tabs -->
+                <div class="flex justify-center flex-wrap mb-12">
+                    <button class="menu-category-btn active" onclick="showCategory('brew')">
+                        ☕ Brew Selection
+                    </button>
+                    <button class="menu-category-btn" onclick="showCategory('bake')">
+                        🍰 Baked Goods
+                    </button>
+                    <button class="menu-category-btn" onclick="showCategory('bites')">
+                        🍽️ Bites & Eats
+                    </button>
+                </div>
+
+                <!-- Brew Category -->
+                <div id="brew" class="category-content">
+                    <h3 class="text-3xl font-bold text-forest mb-8 text-center">Our Specialty Brews</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Signature Espresso</h4>
+                                <span class="text-gold font-bold">₹120</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Single origin, perfectly extracted. The foundation of our craft.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Regular</span>
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Double</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Cappuccino</h4>
+                                <span class="text-gold font-bold">₹180</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Silky microfoam meets rich espresso - pure bliss in every sip.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Regular</span>
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Large</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Cold Brew</h4>
+                                <span class="text-gold font-bold">₹150</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Smooth, refreshing, and perfectly chilled for warm Kolkata days.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Plain</span>
+                                <span class="bg-gold text-forest px-2 py-1 rounded">With Milk</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Flat White</h4>
+                                <span class="text-gold font-bold">₹190</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Velvety milk with bold espresso - the Australian classic.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Regular</span>
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Large</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Affogato</h4>
+                                <span class="text-gold font-bold">₹160</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Vanilla gelato drowned in hot espresso - an elegant experience.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Classic</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Seasonal Specialty</h4>
+                                <span class="text-gold font-bold">₹200</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Rotating seasonal drinks featuring unique flavor combinations.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Ask us!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bake Category -->
+                <div id="bake" class="category-content" style="display: none;">
+                    <h3 class="text-3xl font-bold text-forest mb-8 text-center">Freshly Baked Goods</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Croissant</h4>
+                                <span class="text-gold font-bold">₹80</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Buttery, flaky layers of pure indulgence. The classic choice.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Plain</span>
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Chocolate</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Almond Tart</h4>
+                                <span class="text-gold font-bold">₹120</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Delicate pastry with creamy almond filling - a nutty delight.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Vegan</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Chocolate Brownie</h4>
+                                <span class="text-gold font-bold">₹100</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Rich, fudgy, and loaded with premium Belgian chocolate.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Gluten-Free</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Blueberry Muffin</h4>
+                                <span class="text-gold font-bold">₹90</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Soft, moist, and bursting with fresh blueberries.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Fresh Daily</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Sourdough Bread</h4>
+                                <span class="text-gold font-bold">₹150/loaf</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Artisanal sourdough with a perfect crust and tangy flavor.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Organic</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Vanilla Cheesecake</h4>
+                                <span class="text-gold font-bold">₹140</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Creamy, decadent, and made with Madagascar vanilla.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Slice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bites Category -->
+                <div id="bites" class="category-content" style="display: none;">
+                    <h3 class="text-3xl font-bold text-forest mb-8 text-center">Bites & Light Eats</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Avocado Toast</h4>
+                                <span class="text-gold font-bold">₹280</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Sourdough toast with ripe avocado, lime, and toasted seeds.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Vegan</span>
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Healthy</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Grilled Cheese</h4>
+                                <span class="text-gold font-bold">₹220</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Artisanal cheese blend on perfectly toasted bread.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Smoked Salmon Bagel</h4>
+                                <span class="text-gold font-bold">₹320</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Fresh bagel with smoked salmon, cream cheese, and capers.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Premium</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Quinoa Bowl</h4>
+                                <span class="text-gold font-bold">₹280</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Superfoods with roasted veggies, tahini dressing.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Vegan</span>
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Healthy</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Paneer Sandwich</h4>
+                                <span class="text-gold font-bold">₹240</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Spiced paneer with fresh greens on artisan bread.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-lg text-forest">Pasta Salad</h4>
+                                <span class="text-gold font-bold">₹250</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Fresh pasta with seasonal vegetables and basil pesto.</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="bg-gold text-forest px-2 py-1 rounded">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download PDF Button -->
+                <div class="text-center mt-16">
+                    <div class="mb-8 p-8 bg-white rounded-12px border-2 border-gold">
+                        <p class="text-gray-600 mb-4">Want to see the complete menu?</p>
+                        <a href="revercafe.menu.pdf" target="_blank" class="btn-primary text-lg inline-block">
+                            📥 Download Full Menu (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">About Rever Cafe</h2>
+                <div class="accent-line"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h3 class="text-3xl font-bold text-forest mb-6">Our Story</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Born from a passion for exceptional coffee and timeless design, Rever Cafe represents a fusion of modern sensibilities with heritage aesthetics. We believe that a great café is more than just a place to grab coffee—it's a sanctuary where connections are made and moments are cherished.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Our glasshouse setting echoes Kolkata's architectural heritage while our approach to coffee and cuisine embraces contemporary excellence. Every element, from the furniture to the menu, has been carefully curated to create an experience that feels both timeless and current.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            We're committed to sustainability, quality sourcing, and supporting our local community. Come experience the Rever difference.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://via.placeholder.com/500x600?text=Rever+Cafe+Interior" alt="Rever Cafe Interior" class="rounded-lg shadow-lg w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-12 mb-16">
+                    <h3 class="text-3xl font-bold text-forest mb-8 text-center">Our Values</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">🌱</div>
+                            <h4 class="text-xl font-bold text-forest mb-3">Sustainability</h4>
+                            <p class="text-gray-600">We source ethically and operate responsibly to protect our environment.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">⭐</div>
+                            <h4 class="text-xl font-bold text-forest mb-3">Quality</h4>
+                            <p class="text-gray-600">Excellence in every bean, every pastry, and every interaction.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">❤️</div>
+                            <h4 class="text-xl font-bold text-forest mb-3">Community</h4>
+                            <p class="text-gray-600">We're more than a café—we're a gathering place for our neighborhood.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-forest text-white rounded-lg p-12 text-center">
+                    <h3 class="text-3xl font-bold mb-6">Ready to Join Our Community?</h3>
+                    <p class="text-xl text-cream mb-8">Visit us and experience modern heritage like never before</p>
+                    <button onclick="openBooking()" class="btn-primary text-lg">Book Your Visit</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GALLERY PAGE -->
+    <div id="gallery" class="page">
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Our Vibe</h2>
+                <p class="section-subtitle">Step into our world of modern heritage</p>
+                <div class="accent-line"></div>
+
+                <!-- Interior Gallery -->
+                <h3 class="text-2xl font-bold text-forest mb-8">Ambience & Interiors</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/400x400?text=Interior+1" alt="Interior 1">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Glasshouse Elegance</span>
+                        </div>
+                    </div>
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/400x400?text=Interior+2" alt="Interior 2">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Modern Design</span>
+                        </div>
+                    </div>
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/400x400?text=Interior+3" alt="Interior 3">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Cozy Corners</span>
+                        </div>
+                    </div>
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/400x400?text=Interior+4" alt="Interior 4">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Heritage Vibes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Gallery -->
+                <h3 class="text-2xl font-bold text-forest mb-8">Our Culinary Creations</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/300x300?text=Coffee+1" alt="Coffee 1">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Signature Brew</span>
+                        </div>
+                    </div>
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/300x300?text=Coffee+2" alt="Coffee 2">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Latte Art</span>
+                        </div>
+                    </div>
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/300x300?text=Food+1" alt="Food 1">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Pastries</span>
+                        </div>
+                    </div>
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/300x300?text=Food+2" alt="Food 2">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Baked Fresh</span>
+                        </div>
+                    </div>
+                    <div class="gallery-img">
+                        <img src="https://via.placeholder.com/300x300?text=Food+3" alt="Food 3">
+                        <div class="gallery-overlay">
+                            <span class="text-white text-center">Delicious Bites</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Section -->
+                <h3 class="text-2xl font-bold text-forest mb-8">What Our Guests Say</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="text-2xl font-bold text-forest mr-3">👤</div>
+                            <div>
+                                <p class="font-bold text-forest">Priya Sharma</p>
+                                <div class="rating-stars">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"The ambience is absolutely stunning! The coffee is perfectly brewed and the pastries are divine. Rever Cafe is my new favorite spot in Kolkata."</p>
+                        <p class="text-sm text-gray-500 mt-3">Verified Guest • 2 weeks ago</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="text-2xl font-bold text-forest mr-3">👤</div>
+                            <div>
+                                <p class="font-bold text-forest">Rajesh Kumar</p>
+                                <div class="rating-stars">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"A hidden gem! Perfect place for meetings or just to relax with a good coffee. The service is impeccable and the vibe is incredible."</p>
+                        <p class="text-sm text-gray-500 mt-3">Verified Guest • 3 weeks ago</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="text-2xl font-bold text-forest mr-3">👤</div>
+                            <div>
+                                <p class="font-bold text-forest">Anjali Desai</p>
+                                <div class="rating-stars">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Finally, a café that understands quality! From the specialty coffee to the homemade pastries, everything is top-notch. Highly recommended!"</p>
+                        <p class="text-sm text-gray-500 mt-3">Verified Guest • 1 month ago</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="text-2xl font-bold text-forest mr-3">👤</div>
+                            <div>
+                                <p class="font-bold text-forest">Vikram Singh</p>
+                                <div class="rating-stars">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"The heritage glasshouse setting is absolutely magical. Perfect Instagram spot and the food tastes as good as it looks. Worth every visit!"</p>
+                        <p class="text-sm text-gray-500 mt-3">Verified Guest • 1 month ago</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-8 text-center border-2 border-gold">
+                    <p class="text-gray-600 mb-4">Read more reviews and rate us on Google Maps</p>
+                    <a href="https://maps.app.goo.gl/GhFE3Nk4djbS52WG6" target="_blank" rel="noopener" class="btn-primary text-lg inline-block">
+                        ⭐ Give us a Review
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We'd love to hear from you</p>
+                <div class="accent-line"></div>
+
+                <!-- Contact Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="contact-card">
+                        <div class="text-4xl mb-4">📍</div>
+                        <h3 class="text-xl font-bold mb-2">Location</h3>
+                        <p class="mb-4">AJC Bose Road Area<br>Kolkata, West Bengal</p>
+                        <a href="#map" class="hover:text-gold transition">View on Map ↓</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="text-4xl mb-4">📞</div>
+                        <h3 class="text-xl font-bold mb-2">Call Us</h3>
+                        <p class="mb-4">+91 99033 15530</p>
+                        <a href="tel:+919903315530" class="hover:text-gold transition">Call Now</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="text-4xl mb-4">⏰</div>
+                        <h3 class="text-xl font-bold mb-2">Hours</h3>
+                        <p class="text-sm mb-4">
+                            <span class="block">Mon-Fri: 8 AM - 10 PM</span>
+                            <span class="block">Sat-Sun: 9 AM - 11 PM</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="bg-white rounded-lg p-8 mb-16">
+                    <h3 class="text-3xl font-bold text-forest mb-8 text-center">Book a Table</h3>
+                    <form onsubmit="handleBooking(event)" class="max-w-2xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <input type="text" placeholder="Your Name" class="form-input" required>
+                            <input type="email" placeholder="Your Email" class="form-input" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <input type="tel" placeholder="Your Phone" class="form-input" required>
+                            <input type="date" class="form-input" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <input type="time" class="form-input" required>
+                            <input type="number" placeholder="Number of Guests" min="1" max="10" class="form-input" required>
+                        </div>
+                        <textarea placeholder="Special requests (optional)" class="form-input mb-6" rows="4"></textarea>
+                        <button type="submit" class="btn-primary w-full text-lg">
+                            Confirm Booking
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Google Maps -->
+                <div id="map" class="mb-16">
+                    <h3 class="text-2xl font-bold text-forest mb-8 text-center">Find Us on the Map</h3>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.8279468892424!2d88.37145!3d22.5333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0207ecd3c5c5c5%3A0x5e5e5e5e5e5e5e5e!2sAJC%20Bose%20Road%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1234567890" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Social Links -->
+                <div class="text-center bg-white rounded-lg p-12">
+                    <h3 class="text-2xl font-bold text-forest mb-6">Follow Us</h3>
+                    <p class="text-gray-600 mb-8">Stay updated with our latest offers and cafe moments</p>
+                    <div class="flex justify-center gap-4 flex-wrap">
+                        <a href="https://www.instagram.com/revercafekolkata?igsh=cWFocTAxZGF5dWxw" target="_blank" rel="noopener" class="social-icon">
+                            📸
+                        </a>
+                        <a href="https://wa.me/919903315530?text=Hi%20Rever%20Cafe!" target="_blank" rel="noopener" class="social-icon">
+                            💬
+                        </a>
+                        <a href="tel:+919903315530" class="social-icon">
+                            ☎️
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919903315530?text=Hi%20Rever%20Cafe!%20I'd%20like%20to%20know%20more%20about%20your%20menu%20and%20booking." target="_blank" rel="noopener" class="floating-btn" title="Chat on WhatsApp">
+        💬
+    </a>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeBooking()">&times;</span>
+            <h2 class="text-3xl font-bold text-forest mb-6">Reserve Your Table</h2>
+            <form onsubmit="handleBookingModal(event)">
+                <input type="text" placeholder="Your Name" class="form-input" required>
+                <input type="email" placeholder="Your Email" class="form-input" required>
+                <input type="tel" placeholder="Your Phone" class="form-input" required>
+                <input type="date" class="form-input" required>
+                <input type="time" class="form-input" required>
+                <select class="form-input" required>
+                    <option value="">Select Number of Guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6+">6+ Guests</option>
+                </select>
+                <textarea placeholder="Special requests (optional)" class="form-input" rows="3"></textarea>
+                <button type="submit" class="btn-primary w-full text-lg mt-6">
+                    Confirm Booking via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-forest text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">🍃 REVER CAFE</h4>
+                    <p class="text-cream text-sm">Modern Heritage meets Specialty Coffee</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gold">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" onclick="showPage('home')" class="text-cream hover:text-gold">Home</a></li>
+                        <li><a href="#" onclick="showPage('menu')" class="text-cream hover:text-gold">Menu</a></li>
+                        <li><a href="#" onclick="showPage('gallery')" class="text-cream hover:text-gold">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gold">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.instagram.com/revercafekolkata" class="text-cream hover:text-gold">Instagram</a></li>
+                        <li><a href="https://wa.me/919903315530" class="text-cream hover:text-gold">WhatsApp</a></li>
+                        <li><a href="tel:+919903315530" class="text-cream hover:text-gold">Call Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gold">Hours</h4>
+                    <p class="text-cream text-sm">
+                        Mon-Fri: 8 AM - 10 PM<br>
+                        Sat-Sun: 9 AM - 11 PM
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gold pt-8 text-center text-cream text-sm">
+                <p>&copy; 2024 Rever Cafe Kolkata. All rights reserved. | Crafted with ❤️ for our community</p>
+                <p class="mt-2">📍 AJC Bose Road, Kolkata | 📞 +91 99033 15530</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageName) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageName).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openBooking() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        function handleBooking(e) {
+            e.preventDefault();
+            const name = e.target[0].value;
+            const date = e.target[2].value;
+            const time = e.target[3].value;
+            const guests = e.target[4].value;
+            const message = `Hi Rever Cafe! I'd like to book a table for ${guests} guests on ${date} at ${time}. Name: ${name}`;
+            window.location.href = `https://wa.me/919903315530?text=${encodeURIComponent(message)}`;
+        }
+
+        function handleBookingModal(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form[0].value;
+            const date = form[3].value;
+            const time = form[4].value;
+            const guests = form[5].value;
+            const message = `Hi Rever Cafe! I'd like to book a table for ${guests} guests on ${date} at ${time}. Name: ${name}`;
+            window.location.href = `https://wa.me/919903315530?text=${encodeURIComponent(message)}`;
+        }
+
+        function showCategory(category) {
+            const categories = ['brew', 'bake', 'bites'];
+            categories.forEach(cat => {
+                document.getElementById(cat).style.display = 'none';
+                document.querySelector(`[onclick="showCategory('${cat}')"]`).classList.remove('active');
+            });
+            document.getElementById(category).style.display = 'block';
+            document.querySelector(`[onclick="showCategory('${category}')"]`).classList.add('active');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
